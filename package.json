@@ -1,6 +1,6 @@
 {
   "name": "@se-oss/v2ray",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "TypeScript-first Node.js wrapper for V2Ray/Xray Go WebAssembly engine with config scaffolding and link utilities.",
   "keywords": [
     "v2ray",
