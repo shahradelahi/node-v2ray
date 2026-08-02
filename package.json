@@ -1,0 +1,67 @@
+{
+  "name": "@se-oss/v2ray",
+  "version": "0.0.0",
+  "description": "TypeScript-first Node.js wrapper for V2Ray/Xray Go WebAssembly engine with config scaffolding and link utilities.",
+  "keywords": [
+    "v2ray",
+    "xray",
+    "xray-core",
+    "v2ray-core",
+    "webassembly",
+    "wasm",
+    "proxy",
+    "vless",
+    "vmess",
+    "shadowsocks",
+    "trojan",
+    "hysteria",
+    "wireguard"
+  ],
+  "homepage": "https://github.com/shahradelahi/node-v2ray",
+  "repository": "github:shahradelahi/node-v2ray",
+  "license": "MIT",
+  "author": "Shahrad Elahi <shahrad@litehex.com> (https://github.com/shahradelahi)",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "default": "./dist/index.cjs"
+    }
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/**",
+    "!**/*.d.cts"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "clean": "git clean -dfx node_modules dist .tsbuildinfo",
+    "dev": "tsup --watch",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "pnpm typecheck && eslint .",
+    "lint:fix": "eslint --fix .",
+    "prepublishOnly": "pnpm build && pnpm lint && pnpm format:check && pnpm test",
+    "test": "vitest --run",
+    "typecheck": "tsc --noEmit"
+  },
+  "prettier": "@shahrad/prettier-config",
+  "dependencies": {
+    "@se-oss/base64": "^1.0.1",
+    "@se-oss/rand": "^1.1.0"
+  },
+  "devDependencies": {
+    "@shahrad/eslint-config": "^1.0.1",
+    "@shahrad/prettier-config": "^1.2.2",
+    "@shahrad/tsconfig": "^1.2.0",
+    "@types/node": "^25.0.3",
+    "eslint": "^9.39.2",
+    "globals": "^16.5.0",
+    "prettier": "^3.7.4",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.16"
+  },
+  "packageManager": "pnpm@10.26.2+sha512.0e308ff2005fc7410366f154f625f6631ab2b16b1d2e70238444dd6ae9d630a8482d92a451144debc492416896ed16f7b114a86ec68b8404b2443869e68ffda6"
+}

@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "@shahrad/tsconfig",
+  "compilerOptions": {
+    "checkJs": false
+  },
+  "include": ["**/*.ts"],
+  "exclude": ["node_modules", "dist", "src/v2ray-*"]
+}
