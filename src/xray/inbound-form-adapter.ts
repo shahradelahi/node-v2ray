@@ -76,8 +76,7 @@ export function dropLegacyOptionalEmpties(
 
   if (stream) {
     const fm = stream['finalmask'] as
-      | { tcp?: unknown[]; udp?: unknown[]; quicParams?: unknown }
-      | undefined;
+      { tcp?: unknown[]; udp?: unknown[]; quicParams?: unknown } | undefined;
     if (fm && typeof fm === 'object') {
       const hasTcp = Array.isArray(fm.tcp) && fm.tcp.length > 0;
       const hasUdp = Array.isArray(fm.udp) && fm.udp.length > 0;
